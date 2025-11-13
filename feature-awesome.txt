@@ -8,5 +8,6 @@ Features included:
 HOTFIX APPLIED:
 - Fixed critical memory leak in API endpoints (URGENT-5678)
 - Added rate limiting to prevent DoS attacks
+- Database connection pool size increased to 50 (HOTFIX-9999)
 
 Implemented in ST090-1234
