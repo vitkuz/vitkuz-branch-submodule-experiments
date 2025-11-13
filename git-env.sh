@@ -4,7 +4,7 @@ set -euo pipefail
 ### CONFIG ###########################################################
 
 # Your environment branch order (from lowest to highest)
-BRANCH_CHAIN=(dev int preprod master)
+BRANCH_CHAIN=(dev int preprod main)
 
 # Submodule paths relative to superproject root
 SUBMODULES=(
@@ -89,7 +89,7 @@ cmd_feature_start() {
 # Usage:
 #   ./git-env.sh promote dev int
 #   ./git-env.sh promote int preprod
-#   ./git-env.sh promote preprod master
+#   ./git-env.sh promote preprod main
 ######################################################################
 cmd_promote() {
   local from="$1"
@@ -149,7 +149,7 @@ cmd_promote() {
 # hotfix-sync: bring a hotfix from an upper env branch down to a lower
 #
 # Typical use case:
-#   - You hotfix on preprod or master
+#   - You hotfix on preprod or main
 #   - You want lower envs (int/dev) to also have that commit
 #   - So that future promotions still can use --ff-only
 #
@@ -163,7 +163,7 @@ cmd_promote() {
 # Usage:
 #   ./git-env.sh hotfix-sync preprod int
 #   ./git-env.sh hotfix-sync int dev
-#   ./git-env.sh hotfix-sync master preprod
+#   ./git-env.sh hotfix-sync main preprod
 ######################################################################
 cmd_hotfix_sync() {
   local upper="$1" # where hotfix was done (e.g. preprod)
@@ -239,7 +239,7 @@ Examples:
   # Normal promotion chain (FF-only)
   $(basename "$0") promote dev int
   $(basename "$0") promote int preprod
-  $(basename "$0") promote preprod master
+  $(basename "$0") promote preprod main
 
   # Hotfix sync (upper → lower)
   # hotfix on preprod → sync to int
