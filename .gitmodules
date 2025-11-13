@@ -1,3 +1,6 @@
 [submodule "config"]
 	path = config
 	url = git@github-personal:vitkuz/vitkuz-branch-submodule-experiments--config.git
+[submodule "specific"]
+	path = specific
+	url = git@github-personal:vitkuz/vitkuz-branch-submodule-experiments--specific.git
