@@ -1,0 +1,12 @@
+This is a new awesome feature!
+
+Features included:
+- Enhanced API endpoints
+- Improved error handling
+- Better logging
+
+HOTFIX APPLIED:
+- Fixed critical memory leak in API endpoints (URGENT-5678)
+- Added rate limiting to prevent DoS attacks
+
+Implemented in ST090-1234
